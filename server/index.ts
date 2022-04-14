@@ -1,5 +1,5 @@
-const express = require('express');
-const next = require('next');
+import express, { Request, Response } from 'express';
+import next from 'next';
 
 
 const dev = process.env.NODE_ENV !== 'development';
@@ -12,7 +12,7 @@ app
     .then(() => {
         const server = express();
 
-        server.get('*', (req, res) => {
+        server.get('*', (req: Request, res: Response) => {
             return handle(req, res);
         })
 

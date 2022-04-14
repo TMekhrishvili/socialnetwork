@@ -1,26 +1,16 @@
-import express, { Request, Response } from 'express';
-import next from 'next';
-// import getRoutes from './routes/index';
+import next from 'next'
+import logger from 'loglevel'
+import { startServer } from './start'
 
+const port = parseInt(process.env.PORT!) || 3000
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
 
-const dev = process.env.NODE_ENV !== 'development';
-const app = next({ dev });
+export type NextHandlerType = typeof handle
 
-const handle = app.getRequestHandler();
+app.prepare().then(() => {
+  logger.setLevel('INFO')
 
-app
-    .prepare()
-    .then(() => {
-        const server = express();
-        // server.use('/api', getRoutes());
-        server.get('*', (req: Request, res: Response) => {
-            return handle(req, res);
-        })
-
-        server.listen(3000);
-    })
-    .catch((error) => {
-        console.log(error);
-        process.exit(1);
-    })
-
+  startServer(handle, port)
+})

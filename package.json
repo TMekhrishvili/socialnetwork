@@ -4,7 +4,7 @@
     "dev:server": "nodemon --quiet",
     "dev": "next",
     "build": "next build",
-    "start": "next build && next start --port $port",
+    "start": "ts-node -P server/tsconfig.json server/index.ts && next build && next start --port $port",
     "type-check": "tsc"
   },
   "dependencies": {

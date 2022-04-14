@@ -8,7 +8,8 @@ const createPosts = (req, res) => {
 }
 
 const getPost = (req, res) => {
-    res.send('post')
+    const { id } = req.params;
+    res.send(`post from server: ${id}`);
 }
 
 const updatePost = (req, res) => {

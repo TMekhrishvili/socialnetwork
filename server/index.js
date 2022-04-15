@@ -1,7 +1,7 @@
 const express = require('express');
 const next = require('next');
 const connectDB = require('./config/db');
-const apiRoutes = require('./routes');
+const apiRoutes = require('./route');
 const { port, mongoURI } = require('./config');
 
 const dev = process.env.NODE_ENV !== 'development';

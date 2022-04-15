@@ -11,6 +11,8 @@ app
     .prepare()
     .then(() => {
         const server = express();
+        server.use(express.json());
+        server.use(express.urlencoded({ extended: true }));
         server.use('/api', apiRoutes);
         server.get('*', (req, res) => {
             return handle(req, res);

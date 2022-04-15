@@ -1,8 +1,8 @@
-import React from 'react'
+import { Heading } from '@chakra-ui/react';
 
 const index = () => {
   return (
-    <div>index</div>
+    <Heading mb={6}>First Page</Heading>
   )
 }
 

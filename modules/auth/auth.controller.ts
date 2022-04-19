@@ -4,10 +4,8 @@ import authService, { AuthService } from './auth.service';
 import { RegisterUserInterface } from './reg-user.interface';
 
 export class AuthController {
-    readonly authService: AuthService;
-    constructor(authService: AuthService) {
-        this.authService = authService;
-    }
+
+    constructor(public readonly authService: AuthService) { }
 
     async register(req: Request, res: Response): Promise<any> {
         const user: RegisterUserInterface = req.body;

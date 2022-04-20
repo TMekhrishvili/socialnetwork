@@ -5,6 +5,9 @@
   "repository": "https://github.com/TMekhrishvili/twitter-like-social-network.git",
   "author": "<tmekh11@freeuni.edu.ge>",
   "license": "MIT",
+  "scripts": {
+    "dev": "tsnd --exit-child --transpile-only src/main.ts"
+  },
   "dependencies": {
     "@mantine/form": "^4.1.4",
     "@typegoose/typegoose": "^9.8.0",

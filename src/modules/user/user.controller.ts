@@ -4,7 +4,7 @@ import logger from "../../utils/logger";
 import { RegisterUserBody } from "./user.schema";
 import userService, { UserService } from "./user.service";
 
-export class UserController {
+class UserController {
     constructor(public userService: UserService) { }
     async register(req: Request<{}, {}, RegisterUserBody>, res: Response) {
         const { username, email, password } = req.body;

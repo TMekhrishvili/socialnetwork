@@ -10,7 +10,7 @@ export const registerUserSchema = {
         }).email("not a valid email adress"),
         password: string({
             required_error: "password is required"
-        }).min(6, "password must be at least 6 character"),
+        }).min(6, "password must be at least 6 characters"),
         confirmPassword: string({
             required_error: "confirm password is required"
         })

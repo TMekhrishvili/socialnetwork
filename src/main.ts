@@ -5,6 +5,7 @@ import { CORS_ORIGIN, PORT } from './utils/constants';
 import helmet from 'helmet';
 import { connectToDatabase, disconnectFromDatabase } from './utils/database';
 import logger from './utils/logger';
+import routes from './routes';
 
 const app = express();
 app.use(cookieParser());
@@ -15,7 +16,7 @@ app.use(cors({
 }));
 app.use(helmet());
 
-// routes
+app.use('/api', routes);
 
 const server = app.listen(PORT, async () => {
     await connectToDatabase();

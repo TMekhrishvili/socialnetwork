@@ -12,6 +12,8 @@
     "@mantine/form": "^4.1.4",
     "@typegoose/typegoose": "^9.8.0",
     "@types/bcrypt": "^5.0.0",
+    "@types/passport": "^1.0.7",
+    "@types/passport-jwt": "^3.0.6",
     "bcrypt": "^5.0.1",
     "busboy": "^1.6.0",
     "cookie-parser": "^1.4.6",
@@ -24,6 +26,8 @@
     "mongoose": "^6.3.0",
     "mongoose-slug-generator": "^1.0.4",
     "nanoid": "^3.3.3",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
     "pino": "^7.10.0",
     "zod": "^3.14.4",
     "zod-express-middleware": "^1.4.0"

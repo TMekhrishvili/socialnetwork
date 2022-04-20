@@ -4,6 +4,10 @@ export class UserService {
         return await UserModel.create(user);
     }
 
+    async findUserById(id: string) {
+        return await UserModel.findById(id);
+    }
+
     async findUserByEmail(email: User['email']) {
         return await UserModel.findOne({ email });
     }

@@ -6,6 +6,9 @@ import helmet from 'helmet';
 import { connectToDatabase, disconnectFromDatabase } from './utils/database';
 import logger from './utils/logger';
 import routes from './routes';
+import passport from 'passport';
+import strategy from './utils/passport';
+
 
 const app = express();
 app.use(cookieParser());
@@ -15,6 +18,8 @@ app.use(cors({
     credentials: true
 }));
 app.use(helmet());
+app.use(passport.initialize());
+passport.use(strategy);
 
 app.use('/api', routes);
 
